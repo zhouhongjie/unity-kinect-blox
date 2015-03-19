@@ -102,7 +102,7 @@ public class KinectModelControllerV2 : MonoBehaviour {
 			null, Hip_Right, Knee_Right, Ankle_Right,
 			//extra joints to determine the direction of some bones
 			Head, Hand_Left, Hand_Right, Foot_Left, Foot_Right};
-		
+
 		//determine which bones are not available
 		for(int ii = 0; ii < _bones.Length; ii++)
 		{
