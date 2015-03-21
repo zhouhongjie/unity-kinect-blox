@@ -1,3 +1,0 @@
-1.) Download Unity Kinect Wrapper under: http://wiki.etc.cmu.edu/unity3d/index.php/Microsoft_Kinect_-_Microsoft_SDK#Integrating_with_Unity
-2.) Import UnityPackage of wrapper
-3.) to use emulator: Select: KinectPrefab and check CheckBox
