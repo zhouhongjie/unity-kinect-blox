@@ -47,8 +47,8 @@ public class KinectPointController : MonoBehaviour {
 		R_Arm_Chest = Right_Arm | Spine,
 		No_Feet = All & ~(Foot_Left | Foot_Right),
 		UpperBody = Shoulder_Center | Head|Shoulder_Left | Elbow_Left | Wrist_Left | Hand_Left|
-		Shoulder_Right | Elbow_Right | Wrist_Right | Hand_Right
-		
+		Shoulder_Right | Elbow_Right | Wrist_Right | Hand_Right,
+		Both_Hands =  Wrist_Right | Hand_Right | Wrist_Left | Hand_Left
 	}
 	
 	public SkeletonWrapper sw;
