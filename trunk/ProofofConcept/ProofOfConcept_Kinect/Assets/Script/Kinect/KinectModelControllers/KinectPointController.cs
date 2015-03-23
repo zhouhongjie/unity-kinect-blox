@@ -47,8 +47,8 @@ public class KinectPointController : MonoBehaviour {
 		R_Arm_Chest = Right_Arm | Spine,
 		No_Feet = All & ~(Foot_Left | Foot_Right),
 		UpperBody = Shoulder_Center | Head|Shoulder_Left | Elbow_Left | Wrist_Left | Hand_Left|
-		Shoulder_Right | Elbow_Right | Wrist_Right | Hand_Right,
-		Both_Hands = Wrist_Left | Wrist_Right | Hand_Left | Hand_Right
+		Shoulder_Right | Elbow_Right | Wrist_Right | Hand_Right
+		
 	}
 	
 	public SkeletonWrapper sw;
@@ -91,8 +91,7 @@ public class KinectPointController : MonoBehaviour {
 			Hip_Left, Knee_Left, Ankle_Left, Foot_Left,
 			Hip_Right, Knee_Right, Ankle_Right, Foot_Right};
 		//_bonePos = new Vector4[(int)BoneIndex.Num_Bones];
-
-		Console.WriteLine ("Bones is set to " + Mask);
+		
 	}
 	
 	// Update is called once per frame

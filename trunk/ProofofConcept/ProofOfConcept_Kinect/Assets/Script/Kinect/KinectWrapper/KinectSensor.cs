@@ -144,8 +144,7 @@ public class KinectSensor : MonoBehaviour, KinectInterface {
 		
 		catch (Exception e)
 		{
-			Debug.Log("Most common Reason - other APP is using Kinect - " +
-				"Close other App and Restart Unity" + e.Message);
+			Debug.Log(e.Message);
 		}
 	}
 	
