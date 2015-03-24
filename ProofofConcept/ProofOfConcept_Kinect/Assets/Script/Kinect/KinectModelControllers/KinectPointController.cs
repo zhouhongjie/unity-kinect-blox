@@ -50,8 +50,7 @@ public class KinectPointController : MonoBehaviour {
 		Shoulder_Right | Elbow_Right | Wrist_Right | Hand_Right,
 		Both_Hands =  Wrist_Right | Hand_Right | Wrist_Left | Hand_Left
 	}
-
-	public GameObject duHomo;
+	
 	public SkeletonWrapper sw;
 	
 	public GameObject Hip_Center;
