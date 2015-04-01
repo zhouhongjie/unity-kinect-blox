@@ -46,6 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GestureChecker.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonEventArgs.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonFrameEventArgs.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SwipeGestureEventArgs.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\Gesture.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureControler.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureEnumTypes.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\GestureUpdatePackage.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\IGestureInterface.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment1.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment2.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment3.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeRightSegment1.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeRightSegment2.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeRightSegment3.cs" />
      <Compile Include="Assets\Script\Kinect\KinectImgControllers\DisplayColor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectImgControllers\DisplayDepth.cs" />
      <Compile Include="Assets\Script\Kinect\KinectModelControllers\KinectModelControllerV2.cs" />
