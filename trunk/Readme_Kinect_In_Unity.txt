@@ -11,3 +11,8 @@ How to import:
 - at the moment both hands are configured as trigger (to force a event when the hit a block)
 - I also created a playback file for the emulator to use, so that we didn't the kinect all the time (just select emulator as
 	described above)
+
+#################################################################
+Gesture Recognition: Do it like:
+ - http://blogs.msdn.com/b/mcsuksoldev/archive/2011/08/08/writing-a-gesture-service-with-the-kinect-for-windows-sdk.aspx
+ - I have rewritten it to use our kinect wrapper instead of real kinect NUI - and also created our own gesture checking Object
