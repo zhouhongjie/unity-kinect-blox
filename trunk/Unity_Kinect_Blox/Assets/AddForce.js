@@ -12,3 +12,10 @@ function Update () {
 	GetComponent.<Rigidbody>().AddForce(forceAmount);
 
 }
+
+function OnCollisionEnter (Cubes : Collision) {
+		
+		forceAmount=-forceAmount;
+		
+		//Destroy(gameObject);
+	}
