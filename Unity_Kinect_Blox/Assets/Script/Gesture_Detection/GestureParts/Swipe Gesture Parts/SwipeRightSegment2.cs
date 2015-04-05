@@ -1,17 +1,9 @@
 ﻿namespace AssemblyCSharp
 {
 	using Kinect;
-	
-    /// <summary>
-    /// The second part of the swipe right gesture
-    /// </summary>
+
     public class SwipeRightSegment2 : IRelativeGestureSegment
     {
-        /// <summary>
-        /// Checks the gesture.
-        /// </summary>
-        /// <param name="skeleton">The skeleton.</param>
-        /// <returns>GesturePartResult based on if the gesture part has been completed</returns>
 		public GesturePartResult CheckGesture(SkeletonWrapper skeleton)
         {
             // //left hand in front of left Shoulder

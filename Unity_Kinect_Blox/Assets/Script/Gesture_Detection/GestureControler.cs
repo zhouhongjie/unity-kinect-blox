@@ -10,6 +10,14 @@ namespace AssemblyCSharp
 	public class GestureControler
 	{
 		/// <summary>
+		/// Number of pause Frames when matching segment
+		/// </summary>
+		public int pauseFramesBeetweenHits = 10;
+		/// <summary>
+		/// Number of pause Frames when not matching segment
+		/// </summary>
+		public int pauseFramesBeetweenNonHits = 5;
+		/// <summary>
 		/// The list of all gestures we are currently looking for
 		/// </summary>
 		private List<Gesture> gestures = new List<Gesture>();
@@ -46,6 +54,8 @@ namespace AssemblyCSharp
 		public void AddGesture(GestureType type, IRelativeGestureSegment[] gestureDefinition)
 		{
 			Gesture gesture = new Gesture(type, gestureDefinition);
+			gesture.pauseFramesBeetweenHits = pauseFramesBeetweenHits;
+			gesture.pauseFramesBeetweenNonHits = pauseFramesBeetweenNonHits;
 			gesture.GestureRecognised += new EventHandler<SwipeGestureEventArgs>(this.Gesture_GestureRecognised);
 			this.gestures.Add(gesture);
 		}

@@ -55,6 +55,10 @@
      <Compile Include="Assets\Script\Gesture_Detection\GestureEnumTypes.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\GestureUpdatePackage.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\IGestureInterface.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Push\PushLeftSegment1.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Push\PushLeftSegment2.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Push\PushRightSegment1.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Push\PushRightSegment2.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment1.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment2.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\Swipe Gesture Parts\SwipeLeftSegment3.cs" />
@@ -74,7 +78,7 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/märt/Documents/unity-kinect-blox/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/lwnkrt0/Desktop/FH/AR Project/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
