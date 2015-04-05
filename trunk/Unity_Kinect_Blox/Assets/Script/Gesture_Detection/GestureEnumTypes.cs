@@ -26,14 +26,9 @@
     /// </summary>
     public enum GestureType 
     {
-        /// <summary>
-        /// Swiped left
-        /// </summary>
         LeftSwipe,
-
-        /// <summary>
-        /// swiped right
-        /// </summary>
-        RightSwipe 
+        RightSwipe,
+		PushRight,
+		PushLeft
     }
 }

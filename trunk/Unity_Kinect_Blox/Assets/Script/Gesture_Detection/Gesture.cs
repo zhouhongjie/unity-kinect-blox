@@ -9,34 +9,20 @@
     /// </summary>
     public class Gesture
     {
-        /// <summary>
-        /// The parts that make up this gesture
-        /// </summary>
+		/// <summary>
+		/// Number of pause Frames when matching segment
+		/// </summary>
+		public int pauseFramesBeetweenHits = 10;
+		/// <summary>
+		/// Number of pause Frames when not matching segment
+		/// </summary>
+		public int pauseFramesBeetweenNonHits = 5;
+        
         private IRelativeGestureSegment[] gestureParts;
-
-        /// <summary>
-        /// The current gesture part that we are matching against
-        /// </summary>
         private int currentGesturePart = 0;
-
-        /// <summary>
-        /// the number of frames to pause for when a pause is initiated
-        /// </summary>
-        private int pausedFrameCount = 10;
-
-        /// <summary>
-        /// The current frame that we are on
-        /// </summary>
+		private int pausedFrameCount = 10;
         private int frameCount = 0;
-
-        /// <summary>
-        /// Are we paused?
-        /// </summary>
         private bool paused = false;
-
-        /// <summary>
-        /// The type of gesture that this is
-        /// </summary>
         private GestureType type;
 
         /// <summary>
@@ -61,6 +47,7 @@
         /// <param name="data">The skeleton data.</param>
 		public void UpdateGesture(GestureUpdatePackage data)
         {
+			// check if time for this segment is over
             if (this.paused)
             {
                 if (this.frameCount == this.pausedFrameCount)
@@ -78,15 +65,15 @@
                 {
                     this.currentGesturePart++;
                     this.frameCount = 0;
-                    this.pausedFrameCount = 10;
+					this.pausedFrameCount = pauseFramesBeetweenHits;
                     this.paused = true;
                 }
                 else
                 {
                     if (this.GestureRecognised != null)
                     {
-						Vector3 handRightPos = data.sw.bonePos[0, (int) KinectPointController.BoneMask.Hand_Right];
-						Vector3 handLeftPos = data.sw.bonePos[0, (int) KinectPointController.BoneMask.Hand_Left];
+						Vector3 handRightPos = data.sw.bonePos[0, (int) Kinect.NuiSkeletonPositionIndex.HandRight];
+						Vector3 handLeftPos = data.sw.bonePos[0, (int) Kinect.NuiSkeletonPositionIndex.HandLeft];
 						this.GestureRecognised(this, new SwipeGestureEventArgs(this.type, data.trackingId, data.userId, handLeftPos, handRightPos));
                         this.Reset();
                     }
@@ -96,13 +83,13 @@
             {
                 this.currentGesturePart = 0;
                 this.frameCount = 0;
-                this.pausedFrameCount = 5;
+				this.pausedFrameCount = pauseFramesBeetweenNonHits;
                 this.paused = true;
             }
             else
             {
                 this.frameCount++;
-                this.pausedFrameCount = 5;
+				this.pausedFrameCount = pauseFramesBeetweenNonHits;
                 this.paused = true;
             }
         }
@@ -114,7 +101,7 @@
         {
             this.currentGesturePart = 0;
             this.frameCount = 0;
-            this.pausedFrameCount = 5;
+			this.pausedFrameCount = pauseFramesBeetweenNonHits;
             this.paused = true;
         }
     }
