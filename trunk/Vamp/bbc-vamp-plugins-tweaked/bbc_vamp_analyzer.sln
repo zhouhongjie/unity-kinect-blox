@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bbc_vamp_analyzer", "bbc_vamp_analyzer.vcxproj", "{085BECEE-3712-4C03-BC91-A1398360181E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{085BECEE-3712-4C03-BC91-A1398360181E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{085BECEE-3712-4C03-BC91-A1398360181E}.Debug|Win32.Build.0 = Debug|Win32
+		{085BECEE-3712-4C03-BC91-A1398360181E}.Release|Win32.ActiveCfg = Release|Win32
+		{085BECEE-3712-4C03-BC91-A1398360181E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
