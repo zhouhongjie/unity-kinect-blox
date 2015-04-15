@@ -46,14 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BlocksLive.cs" />
-     <Compile Include="Assets\GestureChecker.cs" />
      <Compile Include="Assets\Script\AudioAnalyze\AudioAnalyzer.cs" />
-     <Compile Include="Assets\Script\BlockGenerator.cs" />
+     <Compile Include="Assets\Script\BlockHandling\BlockGenerator.cs" />
+     <Compile Include="Assets\Script\BlockHandling\BlocksLive.cs" />
+     <Compile Include="Assets\Script\BlockHandling\ShapeMe.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonFrameEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SwipeGestureEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Gesture.cs" />
+     <Compile Include="Assets\Script\Gesture_Detection\GestureChecker.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureControler.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureEnumTypes.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\GestureParts\GestureUpdatePackage.cs" />
@@ -79,7 +80,6 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectRecorder.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" />
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
-     <Compile Include="Assets\ShapeMe.cs" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/lwnkrt0/Desktop/FH/AR Project/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
