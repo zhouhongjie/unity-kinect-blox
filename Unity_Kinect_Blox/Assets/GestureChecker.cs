@@ -69,6 +69,7 @@ public class GestureChecker : MonoBehaviour {
 		}
 		
 		// TODO: make the shoot
+		// Create Laserbeam straight to the end of the tunnel
 		Debug.Log("Shooting at " + ShotFrom.x + ":" + ShotFrom.y);
 	}
 
