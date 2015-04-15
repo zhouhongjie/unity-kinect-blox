@@ -46,8 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AddForce.js" />
-     <Compile Include="Assets\MoveCubes.js" />
+     <Compile Include="Assets\Script\BlockHandling\MoveCubes.js" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
