@@ -7,8 +7,6 @@ Project("{29F57A4A-8300-C5C2-89E5-876280FA4383}") = "Unity_Kinect_Blox", "Assemb
 EndProject
 Project("{29F57A4A-8300-C5C2-89E5-876280FA4383}") = "Unity_Kinect_Blox", "Assembly-UnityScript-firstpass.unityproj", "{C52A0D94-FBED-41F2-C9BE-A0FD3197B1DC}"
 EndProject
-Project("{29F57A4A-8300-C5C2-89E5-876280FA4383}") = "Unity_Kinect_Blox", "Assembly-UnityScript.unityproj", "{6005B27A-CE1F-343A-D54F-43FC2894C63E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,15 +25,11 @@ Global
 		{C52A0D94-FBED-41F2-C9BE-A0FD3197B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C52A0D94-FBED-41F2-C9BE-A0FD3197B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C52A0D94-FBED-41F2-C9BE-A0FD3197B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6005B27A-CE1F-343A-D54F-43FC2894C63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6005B27A-CE1F-343A-D54F-43FC2894C63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6005B27A-CE1F-343A-D54F-43FC2894C63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6005B27A-CE1F-343A-D54F-43FC2894C63E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																															GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
