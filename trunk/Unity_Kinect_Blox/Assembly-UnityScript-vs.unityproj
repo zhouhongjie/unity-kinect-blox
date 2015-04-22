@@ -49,7 +49,7 @@
      <Compile Include="Assets\Script\BlockHandling\MoveCubes.js" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/lwnkrt0/Desktop/FH/AR Project/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Nina/Documents/Studium/Semester6/argumentedReality/Repository/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
