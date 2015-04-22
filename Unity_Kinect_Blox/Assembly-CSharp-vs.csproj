@@ -46,11 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CollisionDetection.cs" />
      <Compile Include="Assets\Script\AudioAnalyze\AudioAnalyzer.cs" />
-     <Compile Include="Assets\Script\BlockHandling\BlockGenerator.cs" />
-     <Compile Include="Assets\Script\BlockHandling\BlocksLive.cs" />
      <Compile Include="Assets\Script\BlockHandling\GenerateBlocks.cs" />
-     <Compile Include="Assets\Script\BlockHandling\ShapeMe.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonFrameEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SwipeGestureEventArgs.cs" />
@@ -83,7 +81,7 @@
      <Compile Include="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" />
      <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Nina/Documents/Studium/Semester6/argumentedReality/Repository/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/lwnkrt0/Desktop/FH/AR Project/Unity_Kinect_Blox/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
