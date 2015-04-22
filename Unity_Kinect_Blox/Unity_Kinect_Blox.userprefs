@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Gesture_Detection\Gesture.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CollisionDetection.cs">
     <Files>
-      <File FileName="Assets\Script\BlockHandling\GenerateBlocks.cs" Line="54" Column="3" />
-      <File FileName="Assets\CollisionDetection.cs" Line="29" Column="12" />
-      <File FileName="Assets\Script\Gesture_Detection\Gesture.cs" Line="96" Column="3" />
+      <File FileName="Assets\Script\BlockHandling\GenerateBlocks.cs" Line="95" Column="21" />
+      <File FileName="Assets\CollisionDetection.cs" Line="43" Column="65" />
+      <File FileName="Assets\Script\Gesture_Detection\Gesture.cs" Line="94" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
