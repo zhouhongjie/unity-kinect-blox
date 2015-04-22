@@ -49,6 +49,7 @@
      <Compile Include="Assets\Script\AudioAnalyze\AudioAnalyzer.cs" />
      <Compile Include="Assets\Script\BlockHandling\BlockGenerator.cs" />
      <Compile Include="Assets\Script\BlockHandling\BlocksLive.cs" />
+     <Compile Include="Assets\Script\BlockHandling\GenerateBlocks.cs" />
      <Compile Include="Assets\Script\BlockHandling\ShapeMe.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonEventArgs.cs" />
      <Compile Include="Assets\Script\Gesture_Detection\Event Arguments\SkeletonFrameEventArgs.cs" />

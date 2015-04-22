@@ -20,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour {
 	private const int POSITION_OF_BEATS = 3;
 	// module global list containing samples	
 	private List<AudioSample> samples = null;
-	private const int SAMPLES_PER_SECOND = 1000;
+	private const int SAMPLES_PER_SECOND = 43;
 	private int currentPositionSamples = 0;
 
 	// Use this for initialization
@@ -39,13 +39,13 @@ public class NewBehaviourScript : MonoBehaviour {
 	List<AudioSample> extractSamples(string csvContent)
 	{
 		List<AudioSample> samples = new List<AudioSample> ();
-		var values = csvContent.Split (';');
+		var values = csvContent.Split (',');
 
 		for (int line = 0; line <= (values.Length / NUMBER_OF_VALUES_PER_LINE); line++) {
 			AudioSample sample = new AudioSample();
 			sample.SampleNumber = Convert.ToInt32(values[(line * POSITION_OF_SAMPLENUMBER)]);
 			sample.Intensity = Convert.ToInt32(values[(line * POSITION_OF_INTENTSITY)]);
-			sample.Beats = Convert.ToInt32(values[(line * POSITION_OF_BEATS)]);
+			//sample.Beats = Convert.ToInt32(values[(line * POSITION_OF_BEATS)]);
 			samples.Add(sample);
 		}
 		return samples;
@@ -89,6 +89,14 @@ public class NewBehaviourScript : MonoBehaviour {
 		 * 
 		 * 			add to BlocksLive -> Composition
 		 */
+
+		var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube.transform.position = new Vector3(0, 0, 0);
+		var rend = new Renderer ();
+		rend.material.SetColor ("_Color", Color.red);
+
+		//cube.AddComponent (rend);
+
 		BlocksLive allBlocks = new BlocksLive();
 
 		// Create Blocks according to Beats in second
