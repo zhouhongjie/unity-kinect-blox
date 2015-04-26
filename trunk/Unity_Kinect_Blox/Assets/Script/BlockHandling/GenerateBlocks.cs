@@ -17,7 +17,7 @@ namespace AssemblyCSharp
 		public enum Difficulty { EASY, MEDIUM, HARD};
 		public static int CurrentScore { get; set;}
 		public string pathToCsv = "";
-		public Difficulty actualDifficulty = Difficulty.EASY; 
+		public Difficulty actualDifficulty = Difficulty.EASY;
 
 		// Mapping CSV to Audiosample Object
 		private const int NUMBER_OF_VALUES_PER_LINE = 2;
@@ -42,7 +42,13 @@ namespace AssemblyCSharp
 		private float speed = 2f;
 
 		private static List<GameObject> cubes = new List<GameObject>();
-		
+
+		// Hud with score
+		void OnGUI()
+		{
+			GUI.Box(new Rect(20, 20, 100, 20), "Score : " + CurrentScore);
+		}
+
 		// Use this for initialization
 		void Start () {
 			string content = ReadCSV (pathToCsv);
