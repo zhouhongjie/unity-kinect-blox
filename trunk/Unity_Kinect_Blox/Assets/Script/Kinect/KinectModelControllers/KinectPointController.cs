@@ -81,7 +81,13 @@ public class KinectPointController : MonoBehaviour {
 	public BoneMask Mask = BoneMask.All;
 	
 	public float scale = 1.0f;
-	
+
+
+	public float get_x_Position()
+	{
+		return this.transform.position.x;
+	}
+
 	// Use this for initialization
 	void Start () {
 		//store bones in a list for easier access
