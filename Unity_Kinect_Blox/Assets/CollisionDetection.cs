@@ -12,39 +12,33 @@ using UnityEngine;
 
 namespace AssemblyCSharp
 {
+	[RequireComponent(typeof(AudioSource))]
 	public class CollisionDetection : MonoBehaviour
 	{
+		public AudioSource winAudio { set; get; }
+
 		public CollisionDetection ()
 		{
-			// Nothing to do
-		}
-
-		
-		private void MyDelay(int seconds)
-		{
-			DateTime dt = DateTime.Now + TimeSpan.FromSeconds(seconds);
-			
-			do { } while (DateTime.Now < dt);
+			// nothing todo
 		}
 
 		void OnCollisionEnter (Collision col)
 		{
-			var radius = 5.0f;
-			var power = 10.0f;
 			var collitionObject = col.gameObject; 
 
 			//Debug.Log ("On colision with " + collitionObject.name);
 
 			if (collitionObject.name.Equals("Blox")) {
 				Vector3 explosionPos = transform.position;
-				Collider[] colliders = Physics.OverlapSphere (explosionPos, radius);
 
-				GenerateBlocks.CurrentScore++;
+				GenerateBlocks.CurrentScore += 5;
 				//Debug.Log ("Scored (score is " + GenerateBlocks.CurrentScore);
-				col.rigidbody.AddExplosionForce(power, explosionPos, radius, 3.0f);
 				GenerateBlocks.DeleteCubeFromList(collitionObject);
+				var sound = GetComponents<AudioSource>();
+				sound[0].Play();
 			}
 		}
+
 	}
 }
 

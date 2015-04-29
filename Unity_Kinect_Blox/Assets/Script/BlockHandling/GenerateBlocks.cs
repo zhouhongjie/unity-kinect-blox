@@ -6,6 +6,7 @@ using System.IO;
 
 namespace AssemblyCSharp
 {
+	[RequireComponent(typeof(AudioSource))]
 	public class GenerateBlocks : MonoBehaviour {
 
 		// Container for a sample
@@ -37,7 +38,7 @@ namespace AssemblyCSharp
 		private const int TUNNEL_WIDTH = 13;
 		private const int TUNNEL_HEIGHT = 10;
 		private const float TUNNEL_LENGTH = -40f;
-		private const float POSTION_OF_DESTROY = -33f;
+		private const float POSTION_OF_DESTROY = -30.5f; // set x Position of Kincet Point Man
 		private Vector3[] rotatings = {new Vector3(1,0,0), new Vector3(0,1,0), new Vector3(0,0,1)};
 		private float speed = 2f;
 
@@ -109,7 +110,9 @@ namespace AssemblyCSharp
 
 				if (c.transform.position.x <= POSTION_OF_DESTROY) {
 					CurrentScore--;
-					toDelete[cubes.IndexOf(c)] =c;
+					toDelete[cubes.IndexOf(c)] = c;
+					var sound = GetComponents<AudioSource>();
+					sound[1].Play(); // File 1 is main sound, Second File is Fail Sound
 				}
 			}
 			
@@ -123,8 +126,6 @@ namespace AssemblyCSharp
 			}
 		}
 
-
-		
 		// Generate Blocks according to samples in global list
 		void generateBlocksForSample(){
 			List<AudioSample> samplesOfSecond = samples.GetRange (currentPositionSamples, SAMPLES_PER_SECOND);
