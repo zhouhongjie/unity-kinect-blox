@@ -47,7 +47,9 @@ namespace AssemblyCSharp
 		// Hud with score
 		void OnGUI()
 		{
-			GUI.Box(new Rect(20, 20, 100, 20), "Score : " + CurrentScore);
+			GUIStyle ScoreStyle = new GUIStyle(GUI.skin.label);
+			ScoreStyle.fontSize = 30;
+			GUI.Box(new Rect(20, 20, 200, 40), "Score : " + CurrentScore, ScoreStyle);
 		}
 
 		// Use this for initialization
@@ -61,7 +63,10 @@ namespace AssemblyCSharp
 		
 		// Update is called once per frame
 		void Update () {
-			// do nothing
+			// rotate blocks
+			foreach (GameObject c in cubes) {
+				c. transform.Rotate(0,40*Time.deltaTime,0);
+			}
 		}
 
 		public static void DeleteCubeFromList(GameObject cube){
