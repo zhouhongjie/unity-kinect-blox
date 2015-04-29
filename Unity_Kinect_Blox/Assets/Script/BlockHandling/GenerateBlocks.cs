@@ -32,13 +32,13 @@ namespace AssemblyCSharp
 		//Properties for color, position
 		private Color[] colors = {Color.red, Color.blue, Color.yellow, Color.green, Color.magenta, Color.cyan};
 		private System.Random random = new System.Random();
-		private const float X_COORDINATE = 10;
-		private const float Y_COORDINATE = 4.5f;
-		private const float Z_COORDINATE = 12f;
+		private const float X_COORDINATE = 7f;
+		private const float Y_COORDINATE =23f;
+		private const float Z_COORDINATE = 51f;
 		private const int TUNNEL_WIDTH = 13;
 		private const int TUNNEL_HEIGHT = 10;
-		private const float TUNNEL_LENGTH = 45f;
-		private const float POSTION_OF_DESTROY = 46f; // set z Position of Kincet Point Man
+		private const float TUNNEL_LENGTH = 110f;
+		private const float POSTION_OF_DESTROY = -43f; // set z Position of Kincet Point Man
 		private Vector3[] rotatings = {new Vector3(1,0,0), new Vector3(0,1,0), new Vector3(0,0,1)};
 		private float base_speed = 2f;
 
@@ -109,11 +109,11 @@ namespace AssemblyCSharp
 			int rotating = 0;
 
 			foreach (GameObject c in cubes) {
-				Vector3 target = new Vector3 (c.transform.position.x, c.transform.position.y, TUNNEL_LENGTH);
+				Vector3 target = new Vector3 (c.transform.position.x, c.transform.position.y, (Z_COORDINATE-TUNNEL_LENGTH));
 				c.transform.position = Vector3.Lerp (c.transform.position, target, Time.deltaTime * base_speed);
 				c.transform.Rotate(rotatings[(rotating++) % rotatings.Length]);
 
-				if (c.transform.position.z >= POSTION_OF_DESTROY) {
+				if (c.transform.position.z <= POSTION_OF_DESTROY) {
 					CurrentScore--;
 					toDelete[cubes.IndexOf(c)] = c;
 					var sound = GetComponents<AudioSource>();
@@ -149,7 +149,7 @@ namespace AssemblyCSharp
 
 			var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			var v = new Vector3 ();
-			v.Set (X_COORDINATE,(float)(Y_COORDINATE+random.Next(TUNNEL_HEIGHT)), (float)(Z_COORDINATE+random.Next(TUNNEL_WIDTH)));
+			v.Set ((float)(X_COORDINATE+random.Next(TUNNEL_WIDTH)),(float)(Y_COORDINATE+random.Next(TUNNEL_HEIGHT)), Z_COORDINATE);
 			cube.transform.position = v;
 			cube.GetComponent<Renderer> ().material.color = colors[random.Next(colors.Length)];
 			v.Set(1,1,1);
