@@ -151,6 +151,8 @@ namespace AssemblyCSharp
 			var v = new Vector3 ();
 			v.Set ((float)(X_COORDINATE+random.Next(TUNNEL_WIDTH)),(float)(Y_COORDINATE+random.Next(TUNNEL_HEIGHT)), Z_COORDINATE);
 			cube.transform.position = v;
+			float randSize = 1.0f + ((float) random.NextDouble())/2.0f;
+			cube.transform.localScale = new Vector3 (randSize, randSize, randSize);
 			cube.GetComponent<Renderer> ().material.color = colors[random.Next(colors.Length)];
 			v.Set(1,1,1);
 			cube.transform.localScale = v;
@@ -159,36 +161,36 @@ namespace AssemblyCSharp
 			cube.GetComponent<Rigidbody> ().useGravity = false;
 			cube.name = "Blox";
 
-			cubes.Add (cube);
 			// Set Current Speed of all Blocks according to current Intensity
 			if (averageIntesity > 0 && averageIntesity < 50) {
-				base_speed = 1f;
+				base_speed = 0.5f;
 			} else if (averageIntesity > 50 && averageIntesity < 100) {
-				base_speed = 2f;
+				base_speed = 1f;
 			} else if (averageIntesity >= 100 && averageIntesity < 200) {
-				base_speed = 3f;
+				base_speed = 1.25f;
 			} else if (averageIntesity >= 200 && averageIntesity < 300) {
-				base_speed = 4f; 
+				base_speed = 1.5f; 
 			} else if (averageIntesity >= 300 && averageIntesity < 400) {
-				base_speed = 5f; 
+				base_speed = 2f; 
 			} else if (averageIntesity >= 400 && averageIntesity < 500) {
-				base_speed = 6f; 
+				base_speed = 3f; 
 			} else if (averageIntesity >= 500) {
-				base_speed = 7f;
+				base_speed = 3.5f;
 			} else if (averageIntesity >= 750) {
-				base_speed = 9f;
+				base_speed = 4.5f;
 			}
 
+			cubes.Add (cube);
 			float multiplier = 1;
 			switch (actualDifficulty) {
 			case Difficulty.EASY:
-				multiplier = 0.5f;
+				multiplier = 0.75f;
 				break;
 			case Difficulty.MEDIUM:
-				multiplier = 1;
+				multiplier = 1.25f;
 				break;
 			case Difficulty.HARD:
-				multiplier = 1.5f;
+				multiplier = 2f;
 				break;
 			}
 			base_speed *= multiplier;
