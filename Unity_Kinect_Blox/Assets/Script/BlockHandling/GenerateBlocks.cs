@@ -65,7 +65,7 @@ namespace AssemblyCSharp
 		void Update () {
 			// rotate blocks
 			foreach (GameObject c in cubes) {
-				c. transform.Rotate(0,40*Time.deltaTime,0);
+				   c. transform.Rotate(0, 0 ,40*Time.deltaTime);
 			}
 		}
 
@@ -161,12 +161,22 @@ namespace AssemblyCSharp
 
 			cubes.Add (cube);
 			// Set Current Speed of all Blocks according to current Intensity
-			if (averageIntesity > 0 && averageIntesity < 100) {
+			if (averageIntesity > 0 && averageIntesity < 50) {
+				base_speed = 1f;
+			} else if (averageIntesity > 50 && averageIntesity < 100) {
 				base_speed = 2f;
-			} else if (averageIntesity >= 100 && averageIntesity < 500) {
-				base_speed = 4f;
+			} else if (averageIntesity >= 100 && averageIntesity < 200) {
+				base_speed = 3f;
+			} else if (averageIntesity >= 200 && averageIntesity < 300) {
+				base_speed = 4f; 
+			} else if (averageIntesity >= 300 && averageIntesity < 400) {
+				base_speed = 5f; 
+			} else if (averageIntesity >= 400 && averageIntesity < 500) {
+				base_speed = 6f; 
 			} else if (averageIntesity >= 500) {
 				base_speed = 7f;
+			} else if (averageIntesity >= 750) {
+				base_speed = 9f;
 			}
 
 			float multiplier = 1;
