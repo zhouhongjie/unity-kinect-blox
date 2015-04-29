@@ -32,15 +32,15 @@ namespace AssemblyCSharp
 		//Properties for color, position
 		private Color[] colors = {Color.red, Color.blue, Color.yellow, Color.green, Color.magenta, Color.cyan};
 		private System.Random random = new System.Random();
-		private const float X_COORDINATE = 64f;
-		private const float Y_COORDINATE = 22.5f;
-		private const float Z_COORDINATE = -7f;
+		private const float X_COORDINATE = 10;
+		private const float Y_COORDINATE = 4.5f;
+		private const float Z_COORDINATE = 12f;
 		private const int TUNNEL_WIDTH = 13;
 		private const int TUNNEL_HEIGHT = 10;
-		private const float TUNNEL_LENGTH = -40f;
-		private const float POSTION_OF_DESTROY = -30.5f; // set x Position of Kincet Point Man
+		private const float TUNNEL_LENGTH = 45f;
+		private const float POSTION_OF_DESTROY = 46f; // set z Position of Kincet Point Man
 		private Vector3[] rotatings = {new Vector3(1,0,0), new Vector3(0,1,0), new Vector3(0,0,1)};
-		private float speed = 2f;
+		private float base_speed = 2f;
 
 		private static List<GameObject> cubes = new List<GameObject>();
 
@@ -109,11 +109,11 @@ namespace AssemblyCSharp
 			int rotating = 0;
 
 			foreach (GameObject c in cubes) {
-				Vector3 target = new Vector3 (TUNNEL_LENGTH, c.transform.position.y, c.transform.position.z);
-				c.transform.position = Vector3.Lerp (c.transform.position, target, Time.deltaTime * speed);
+				Vector3 target = new Vector3 (c.transform.position.x, c.transform.position.y, TUNNEL_LENGTH);
+				c.transform.position = Vector3.Lerp (c.transform.position, target, Time.deltaTime * base_speed);
 				c.transform.Rotate(rotatings[(rotating++) % rotatings.Length]);
 
-				if (c.transform.position.x <= POSTION_OF_DESTROY) {
+				if (c.transform.position.z >= POSTION_OF_DESTROY) {
 					CurrentScore--;
 					toDelete[cubes.IndexOf(c)] = c;
 					var sound = GetComponents<AudioSource>();
@@ -162,11 +162,11 @@ namespace AssemblyCSharp
 			cubes.Add (cube);
 			// Set Current Speed of all Blocks according to current Intensity
 			if (averageIntesity > 0 && averageIntesity < 100) {
-				speed = 2f;
+				base_speed = 2f;
 			} else if (averageIntesity >= 100 && averageIntesity < 500) {
-				speed = 4f;
+				base_speed = 4f;
 			} else if (averageIntesity >= 500) {
-				speed = 7f;
+				base_speed = 7f;
 			}
 
 			float multiplier = 1;
@@ -181,7 +181,7 @@ namespace AssemblyCSharp
 				multiplier = 1.5f;
 				break;
 			}
-			speed *= multiplier;
+			base_speed *= multiplier;
 		}
 }
 }
