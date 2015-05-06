@@ -33,23 +33,30 @@ namespace AssemblyCSharp
 		private Color[] colors = {Color.red, Color.blue, Color.yellow, Color.green, Color.magenta, Color.cyan};
 		private System.Random random = new System.Random();
 		private const float X_COORDINATE = 7f;
-		private const float Y_COORDINATE =23f;
+		private const float Y_COORDINATE =28f;
 		private const float Z_COORDINATE = 51f;
-		private const int TUNNEL_WIDTH = 13;
-		private const int TUNNEL_HEIGHT = 10;
+		private const int TUNNEL_WIDTH = 9;
+		private const int TUNNEL_HEIGHT = 7;
 		private const float TUNNEL_LENGTH = 110f;
 		private const float POSTION_OF_DESTROY = -43f; // set z Position of Kincet Point Man
 		private Vector3[] rotatings = {new Vector3(1,0,0), new Vector3(0,1,0), new Vector3(0,0,1)};
-		private float base_speed = 2f;
+		private float base_speed = 1.5f;
+		private bool songFinished = false;
 
 		private static List<GameObject> cubes = new List<GameObject>();
 
 		// Hud with score
 		void OnGUI()
 		{
-			GUIStyle ScoreStyle = new GUIStyle(GUI.skin.label);
-			ScoreStyle.fontSize = 30;
-			GUI.Box(new Rect(20, 20, 200, 40), "Score : " + CurrentScore, ScoreStyle);
+			if (songFinished) {
+				GUIStyle ScoreStyle = new GUIStyle(GUI.skin.label);
+				ScoreStyle.fontSize = 70;
+				GUI.Box(new Rect(Screen.width/3, Screen.height-80, Screen.width - 50, 70), "Your Score is " + CurrentScore, ScoreStyle);
+			} else {
+				GUIStyle ScoreStyle = new GUIStyle(GUI.skin.label);
+				ScoreStyle.fontSize = 30;
+				GUI.Box(new Rect(20, 20, 200, 40), "Score : " + CurrentScore, ScoreStyle);
+			}
 		}
 
 		// Use this for initialization
@@ -63,9 +70,14 @@ namespace AssemblyCSharp
 		
 		// Update is called once per frame
 		void Update () {
-			// rotate blocks
-			foreach (GameObject c in cubes) {
-				   c. transform.Rotate(0, 0 ,40*Time.deltaTime);
+			if (songFinished) {
+				CancelInvoke ("generateBlocksForSample");
+				CancelInvoke ("moveBlocks");
+			} else {
+				// rotate blocks
+				foreach (GameObject c in cubes) {
+					c. transform.Rotate(0, 0 ,40*Time.deltaTime);
+				}
 			}
 		}
 
@@ -121,7 +133,7 @@ namespace AssemblyCSharp
 				}
 			}
 			
-			for (int i =0; i<toDelete.Length; i++) {
+			for (int i =0; i < toDelete.Length; i++) {
 				GameObject c = toDelete[i];
 				if(c != null){
 					cubes.Remove(c);
@@ -144,8 +156,12 @@ namespace AssemblyCSharp
 			averageIntesity = additiveIntensity / samplesOfSecond.Capacity;
 
 			currentPositionSamples += SAMPLES_PER_SECOND;
-			if (currentPositionSamples + SAMPLES_PER_SECOND >= samples.Count)
-				currentPositionSamples = 0;
+
+			// check if end of song
+			if (currentPositionSamples + SAMPLES_PER_SECOND >= samples.Count) {
+				System.Threading.Thread.Sleep(2000);
+				songFinished = true;
+			}
 
 			var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			var v = new Vector3 ();
@@ -195,5 +211,5 @@ namespace AssemblyCSharp
 			}
 			base_speed *= multiplier;
 		}
-}
+	}
 }
